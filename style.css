@@ -1,0 +1,763 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Sora:wght@100..800&display=swap');
+
+/* ==========================================================================
+   Variáveis CSS e Temas
+   ========================================================================== */
+:root {
+    /* Cores Principais - Tema Claro Padrão */
+    --color-primary: #0052cc;
+    /* Azul principal */
+    --color-primary-hover: #003d99;
+    --color-secondary: #009688;
+    /* Verde azulado (Teal) */
+    --color-secondary-hover: #00796b;
+
+    /* Cores de Fundo e Texto - Tema Claro */
+    --bg-main: #f8fafc;
+    --bg-alt: #ffffff;
+    --bg-card: #ffffff;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+
+    /* Feedback / Alertas */
+    --color-alert: #f59e0b;
+
+    /* Sombras & Efeitos */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.5);
+
+    /* Espaçamentos e Fontes */
+    --font-sans: 'Inter', sans-serif;
+    --container-width: 1200px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Tema Escuro */
+[data-theme="dark"] {
+    --color-primary: #3b82f6;
+    /* Azul mais claro para contraste */
+    --color-primary-hover: #60a5fa;
+    --color-secondary: #2dd4bf;
+    /* Teal mais claro */
+    --color-secondary-hover: #5eead4;
+
+    --bg-main: #0f172a;
+    --bg-alt: #1e293b;
+    --bg-card: #1e293b;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --border-color: #334155;
+
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+    --glass-bg: rgba(30, 41, 59, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+/* ==========================================================================
+   Reset e Base
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    width: 100%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.bg-alt {
+    background-color: var(--bg-alt);
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* ==========================================================================
+   Tipografia
+   ========================================================================== */
+h1,
+h2,
+h3,
+h4 {
+    line-height: 1.2;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    letter-spacing: -0.02em;
+}
+
+.section-title {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    margin-bottom: 1rem;
+}
+
+.section-desc {
+    color: var(--text-muted);
+    font-size: 1.125rem;
+    max-width: 600px;
+    margin: 0 auto 3rem;
+}
+
+.subtitle {
+    font-size: clamp(1.125rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+/* ==========================================================================
+   Botões
+   ========================================================================== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    border: none;
+    font-size: 1rem;
+}
+
+.btn-small {
+    padding: 8px 16px;
+    font-size: 0.875rem;
+}
+
+.btn-large {
+    padding: 16px 32px;
+    font-size: 1.125rem;
+    border-radius: 12px;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(0, 82, 204, 0.3);
+}
+
+[data-theme="dark"] .btn-primary {
+    color: #0f172a;
+    box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 82, 204, 0.4);
+}
+
+[data-theme="dark"] .btn-primary:hover {
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+}
+
+.btn-secondary {
+    background-color: var(--color-secondary);
+    color: #ffffff;
+}
+
+[data-theme="dark"] .btn-secondary {
+    color: #0f172a;
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-secondary-hover);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--border-color);
+    color: var(--text-main);
+}
+
+.btn-outline:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+/* ==========================================================================
+   Navegação (Header)
+   ========================================================================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--glass-border);
+    transition: var(--transition);
+    padding: 16px 0;
+}
+
+.navbar.scrolled {
+    padding: 12px 0;
+    box-shadow: var(--shadow-sm);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.logo i {
+    color: var(--color-primary);
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 0.9375rem;
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav-links a:hover {
+    color: var(--color-primary);
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.theme-toggle {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.theme-toggle:hover {
+    background-color: var(--bg-alt);
+    color: var(--color-primary);
+}
+
+.moon-icon {
+    display: none;
+}
+
+.sun-icon {
+    display: block;
+}
+
+[data-theme="dark"] .moon-icon {
+    display: block;
+}
+
+[data-theme="dark"] .sun-icon {
+    display: none;
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    color: var(--text-main);
+    cursor: pointer;
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.hero {
+    padding-top: 120px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: -10%;
+    width: 50%;
+    height: 50%;
+    background: radial-gradient(circle, var(--color-primary) 0%, transparent 70%);
+    opacity: 0.1;
+    filter: blur(60px);
+    z-index: -1;
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero-cta {
+    display: flex;
+    gap: 16px;
+}
+
+.hero-image-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image {
+    max-height: 80vh;
+    object-fit: contain;
+    z-index: 2;
+    border-radius: 24px;
+    box-shadow: var(--shadow-lg);
+}
+
+.glow-effect {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    background: var(--color-secondary);
+    filter: blur(100px);
+    opacity: 0.15;
+    z-index: 1;
+}
+
+/* Floating animation */
+.floating {
+    animation: floating 6s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* ==========================================================================
+   Problema Section
+   ========================================================================== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+}
+
+.card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 32px;
+    transition: var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-primary);
+}
+
+.icon-wrapper {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.icon-wrapper.alert {
+    background-color: rgba(245, 158, 11, 0.1);
+    color: var(--color-alert);
+}
+
+.icon-wrapper.primary {
+    background-color: rgba(0, 82, 204, 0.1);
+    color: var(--color-primary);
+}
+
+[data-theme="dark"] .icon-wrapper.primary {
+    background-color: rgba(59, 130, 246, 0.1);
+}
+
+.problem-card h3 {
+    font-size: 1.25rem;
+}
+
+.problem-card p {
+    color: var(--text-muted);
+}
+
+/* ==========================================================================
+   Solução Section
+   ========================================================================== */
+.solucao-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+}
+
+.feature-list {
+    margin-top: 32px;
+}
+
+.feature-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+.feature-list i {
+    color: var(--color-secondary);
+}
+
+.glass-image {
+    border-radius: 16px;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border-color);
+}
+
+/* ==========================================================================
+   Exemplos de Uso
+   ========================================================================== */
+.use-cases-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+}
+
+.use-case-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 24px;
+    border-radius: 12px;
+    flex: 1 1 calc(33.333% - 16px);
+    min-width: 250px;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.use-case-card:hover {
+    border-color: var(--color-secondary);
+    box-shadow: var(--shadow-md);
+}
+
+/* ==========================================================================
+   Benefícios
+   ========================================================================== */
+.benefits-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 32px;
+    margin-top: 48px;
+}
+
+.benefit-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.benefit-number {
+    width: 64px;
+    height: 64px;
+    background-color: var(--color-primary);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: var(--shadow-md);
+}
+
+[data-theme="dark"] .benefit-number {
+    color: #0f172a;
+}
+
+.benefit-text {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   Prova Social
+   ========================================================================== */
+.quote-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.quote-icon {
+    width: 48px;
+    height: 48px;
+    color: var(--color-primary);
+    opacity: 0.5;
+    margin-bottom: 24px;
+}
+
+.impact-text {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-style: italic;
+    color: var(--text-main);
+    line-height: 1.4;
+}
+
+/* ==========================================================================
+   CTA Final
+   ========================================================================== */
+.cta-section {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+[data-theme="dark"] .cta-section {
+    background: linear-gradient(135deg, #003d99, #00796b);
+    /* Cores mais escuras no CTA para dark mode */
+}
+
+.cta-container {
+    position: relative;
+    z-index: 2;
+}
+
+.cta-section .section-title,
+.cta-section .section-desc {
+    color: white;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 32px;
+}
+
+.cta-section .btn-primary {
+    background-color: white;
+    color: var(--color-primary);
+}
+
+.cta-section .btn-primary:hover {
+    background-color: var(--bg-main);
+}
+
+.cta-section .btn-outline {
+    border-color: rgba(255, 255, 255, 0.5);
+    color: white;
+}
+
+.cta-section .btn-outline:hover {
+    border-color: white;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+footer {
+    background-color: var(--bg-alt);
+    border-top: 1px solid var(--border-color);
+    padding: 32px 0;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   Animações de Scroll
+   ========================================================================== */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in {
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.fade-in-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.visible {
+    opacity: 1;
+    transform: translate(0);
+}
+
+/* ==========================================================================
+   Media Queries (Responsividade)
+   ========================================================================== */
+@media (max-width: 992px) {
+
+    .hero-container,
+    .solucao-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-cta {
+        justify-content: center;
+    }
+
+    .solucao-content {
+        order: 2;
+    }
+
+    .solucao-visual {
+        order: 1;
+    }
+
+    .feature-list li {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .nav-links,
+    .hidden-mobile {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    /* Menu mobile simples para o exemplo */
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-alt);
+        padding: 24px;
+        box-shadow: var(--shadow-md);
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .hero {
+        padding-top: 100px;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+    }
+}

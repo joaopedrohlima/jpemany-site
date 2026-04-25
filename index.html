@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JPeMANY - Dashboards Inteligentes</title>
+    <meta name="description" content="Dashboards personalizados e mobile-first para organizar e centralizar sua operação digital.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <i data-lucide="layout-dashboard"></i>
+                <span>JPeMANY</span>
+            </a>
+            
+            <nav class="nav-links">
+                <a href="#solucao">Solução</a>
+                <a href="#diferencial">Diferencial</a>
+                <a href="#exemplos">Casos de Uso</a>
+                <a href="#beneficios">Benefícios</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema">
+                    <i data-lucide="sun" class="sun-icon"></i>
+                    <i data-lucide="moon" class="moon-icon"></i>
+                </button>
+                <a href="#contato" class="btn btn-primary btn-small hidden-mobile">Falar no WhatsApp</a>
+                <button class="mobile-menu-btn" aria-label="Menu">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. Hero Section -->
+        <section id="hero" class="hero">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <h1 class="fade-in-up">O controle da sua empresa, em qualquer lugar.</h1>
+                    <p class="subtitle fade-in-up" style="animation-delay: 0.1s;">Dashboards sob medida e focados no mobile para organizar o caos digital da sua operação.</p>
+                    <div class="hero-cta fade-in-up" style="animation-delay: 0.2s;">
+                        <a href="#contato" class="btn btn-primary">Solicitar demonstração</a>
+                        <a href="#contato" class="btn btn-secondary">Falar no WhatsApp</a>
+                    </div>
+                </div>
+                <div class="hero-image-wrapper fade-in" style="animation-delay: 0.3s;">
+                    <img id="hero-img" src="assets/hero-mockup.png" alt="Dashboard mobile JPeMANY" class="hero-image floating">
+                    <div class="glow-effect"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Problema Section -->
+        <section id="problema" class="problema section-padding">
+            <div class="container">
+                <div class="section-header text-center fade-in-up">
+                    <h2 class="section-title">O Caos Digital está travando seu crescimento?</h2>
+                    <p class="section-desc">Se você se identifica com estas situações, sua empresa precisa de centralização.</p>
+                </div>
+                <div class="grid problem-grid">
+                    <div class="card problem-card fade-in-up">
+                        <div class="icon-wrapper alert"><i data-lucide="files"></i></div>
+                        <h3>Informações Espalhadas</h3>
+                        <p>Planilhas, e-mails e sistemas diferentes que não se conversam.</p>
+                    </div>
+                    <div class="card problem-card fade-in-up" style="animation-delay: 0.1s;">
+                        <div class="icon-wrapper alert"><i data-lucide="trending-down"></i></div>
+                        <h3>Falta de Controle</h3>
+                        <p>Dificuldade em visualizar indicadores importantes em tempo real.</p>
+                    </div>
+                    <div class="card problem-card fade-in-up" style="animation-delay: 0.2s;">
+                        <div class="icon-wrapper alert"><i data-lucide="activity"></i></div>
+                        <h3>Processos Desorganizados</h3>
+                        <p>Tempo perdido caçando dados ao invés de tomar decisões estratégicas.</p>
+                    </div>
+                    <div class="card problem-card fade-in-up" style="animation-delay: 0.3s;">
+                        <div class="icon-wrapper alert"><i data-lucide="blocks"></i></div>
+                        <h3>Dependência de Ferramentas</h3>
+                        <p>Pagando por múltiplos softwares complexos quando você precisa do essencial.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Solução Section -->
+        <section id="solucao" class="solucao section-padding bg-alt">
+            <div class="container solucao-container">
+                <div class="solucao-content fade-in-left">
+                    <h2 class="section-title">A Solução JPeMANY</h2>
+                    <p class="section-desc">Criamos painéis administrativos 100% personalizados para a realidade do seu negócio. Chega de adaptar sua empresa a sistemas engessados.</p>
+                    <ul class="feature-list">
+                        <li><i data-lucide="check-circle-2"></i> Tudo centralizado em um único sistema</li>
+                        <li><i data-lucide="check-circle-2"></i> Acesso ultra-rápido pelo celular</li>
+                        <li><i data-lucide="check-circle-2"></i> Interface simples e altamente intuitiva</li>
+                    </ul>
+                </div>
+                <div class="solucao-visual fade-in-right">
+                    <!-- Placeholder image that will be replaced by generated asset -->
+                    <img id="solution-img" src="assets/dashboard-preview.png" alt="Interface simples e intuitiva" class="glass-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Diferencial Section -->
+        <section id="diferencial" class="diferencial section-padding">
+            <div class="container">
+                <div class="section-header text-center fade-in-up">
+                    <h2 class="section-title">Por que escolher nossos Dashboards?</h2>
+                </div>
+                <div class="grid feature-grid">
+                    <div class="feature-item fade-in-up">
+                        <div class="icon-wrapper primary"><i data-lucide="pen-tool"></i></div>
+                        <h4>Sob Medida</h4>
+                        <p>Não usamos templates prontos. Construímos exatamente o que você precisa.</p>
+                    </div>
+                    <div class="feature-item fade-in-up" style="animation-delay: 0.1s;">
+                        <div class="icon-wrapper primary"><i data-lucide="smartphone"></i></div>
+                        <h4>Foco em Mobile</h4>
+                        <p>Acesse indicadores cruciais de onde estiver, na palma da sua mão.</p>
+                    </div>
+                    <div class="feature-item fade-in-up" style="animation-delay: 0.2s;">
+                        <div class="icon-wrapper primary"><i data-lucide="sparkles"></i></div>
+                        <h4>Design Premium</h4>
+                        <p>Visual limpo e profissional que engaja e facilita a leitura de dados.</p>
+                    </div>
+                    <div class="feature-item fade-in-up" style="animation-delay: 0.3s;">
+                        <div class="icon-wrapper primary"><i data-lucide="plug"></i></div>
+                        <h4>Fácil Integração</h4>
+                        <p>Conectamos as bases de dados que sua empresa já utiliza.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Exemplos de Uso Section -->
+        <section id="exemplos" class="exemplos section-padding bg-alt">
+            <div class="container">
+                <div class="section-header text-center fade-in-up">
+                    <h2 class="section-title">Múltiplas Aplicações</h2>
+                    <p class="section-desc">Um sistema feito para resolver qualquer gargalo operacional.</p>
+                </div>
+                <div class="use-cases-grid">
+                    <div class="use-case-card fade-in-up">
+                        <h4>CRM Simplificado</h4>
+                        <p>Gerencie seus clientes de forma leve.</p>
+                    </div>
+                    <div class="use-case-card fade-in-up" style="animation-delay: 0.1s;">
+                        <h4>Controle Financeiro</h4>
+                        <p>Entradas e saídas claras no dashboard.</p>
+                    </div>
+                    <div class="use-case-card fade-in-up" style="animation-delay: 0.2s;">
+                        <h4>Gestão de Leads</h4>
+                        <p>Acompanhe o funil de vendas em tempo real.</p>
+                    </div>
+                    <div class="use-case-card fade-in-up" style="animation-delay: 0.3s;">
+                        <h4>Acompanhamento de Vendas</h4>
+                        <p>Metas e resultados da equipe ao vivo.</p>
+                    </div>
+                    <div class="use-case-card fade-in-up" style="animation-delay: 0.4s;">
+                        <h4>Automação de Processos</h4>
+                        <p>Reduza tarefas manuais repetitivas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Benefícios Section -->
+        <section id="beneficios" class="beneficios section-padding text-center">
+            <div class="container">
+                <h2 class="section-title fade-in-up">O que você ganha?</h2>
+                <div class="benefits-container fade-in-up">
+                    <div class="benefit-item">
+                        <span class="benefit-number">1</span>
+                        <span class="benefit-text">Mais organização</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-number">2</span>
+                        <span class="benefit-text">Decisões rápidas</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-number">3</span>
+                        <span class="benefit-text">Economia de tempo</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-number">4</span>
+                        <span class="benefit-text">Visão clara do negócio</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Prova Social Section -->
+        <section id="prova" class="prova section-padding bg-alt">
+            <div class="container text-center">
+                <div class="quote-container fade-in-up">
+                    <i data-lucide="quote" class="quote-icon"></i>
+                    <h2 class="impact-text">"Transformamos dados brutos em decisões precisas."</h2>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. CTA Final Section -->
+        <section id="contato" class="cta-section section-padding">
+            <div class="container text-center cta-container fade-in-up">
+                <h2 class="section-title">Transforme sua empresa com um painel inteligente</h2>
+                <p class="section-desc">Agende uma demonstração e veja como podemos organizar o seu negócio.</p>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/SEUNUMEROAQUI" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large">
+                        <i data-lucide="message-circle"></i> Falar no WhatsApp
+                    </a>
+                    <a href="mailto:contato@jpemany.com.br" class="btn btn-outline btn-large">
+                        <i data-lucide="mail"></i> Enviar E-mail
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <i data-lucide="layout-dashboard"></i>
+                <span>JPeMANY</span>
+            </div>
+            <p>&copy; 2026 JPeMANY. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Inicializar os ícones do Lucide
+        lucide.createIcons();
+    </script>
+</body>
+</html>
