@@ -32,8 +32,11 @@ export default function Header() {
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
-          <Link href="#servicos" className="text-sm font-medium text-muted hover:text-white transition-colors">
-            Serviços
+          <Link href="#vendas" className="text-sm font-medium text-muted hover:text-white transition-colors">
+            Vendas
+          </Link>
+          <Link href="#eficiencia" className="text-sm font-medium text-muted hover:text-white transition-colors">
+            Eficiência
           </Link>
           <Link href="#sobre" className="text-sm font-medium text-muted hover:text-white transition-colors">
             Sobre Nós
@@ -60,11 +63,18 @@ export default function Header() {
         <div className="md:hidden glass absolute top-full left-0 w-full border-b border-surface-border">
           <div className="flex flex-col px-6 py-4 gap-4">
             <Link
-              href="#servicos"
+              href="#vendas"
               className="text-muted hover:text-white py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Serviços
+              Vendas
+            </Link>
+            <Link
+              href="#eficiencia"
+              className="text-muted hover:text-white py-2"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Eficiência
             </Link>
             <Link
               href="#sobre"

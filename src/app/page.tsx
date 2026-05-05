@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import Services from "@/components/Services";
+import SalesGrowth from "@/components/SalesGrowth";
+import Efficiency from "@/components/Efficiency";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -10,7 +11,8 @@ export default function Home() {
       <Header />
       <div className="flex-1">
         <Hero />
-        <Services />
+        <SalesGrowth />
+        <Efficiency />
         <Contact />
       </div>
       <Footer />
