@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { Code2, Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
+import Image from 'next/image';
 
 const InstagramIcon = ({ className }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -24,9 +25,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1 md:col-span-2">
             <Link href="/" className="flex items-center gap-2 group mb-6 inline-flex">
-              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center border border-primary/20">
-                <Code2 className="text-primary w-6 h-6" />
-              </div>
+              <Image src="/logo.webp" alt="Logo" width={40} height={40} />
               <span className="text-xl font-bold tracking-tight text-white">JPeMANY</span>
             </Link>
             <p className="text-muted max-w-sm mb-6 leading-relaxed">
