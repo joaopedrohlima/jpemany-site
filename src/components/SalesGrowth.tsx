@@ -33,9 +33,9 @@ const containerVariants: Variants = {
   },
 };
 
-const transition: Transition = {
+const itemTransition: Transition = {
   duration: 0.6,
-  ease: "easeOut",
+  ease: [0.25, 0.1, 0.25, 1],
 };
 
 const itemVariants: Variants = {
@@ -46,7 +46,7 @@ const itemVariants: Variants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition,
+    transition: itemTransition,
   },
 };
 
