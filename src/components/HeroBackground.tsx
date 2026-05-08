@@ -43,7 +43,7 @@ export default function HeroBackground() {
         }}
         transition={{
           type: "tween",
-          ease: "easeOut",
+          ease: "easeOut" as const,
           duration: 1
         }}
       />
