@@ -66,7 +66,7 @@ export default function SalesGrowth() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
+            transition={{ delay: 0.1 as const }}
             className="text-4xl md:text-6xl font-bold mb-8 leading-tight"
           >
             Nós ajudamos você a <br className="hidden md:block" />
@@ -79,7 +79,7 @@ export default function SalesGrowth() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
+            transition={{ delay: 0.2 as const }}
             className="text-xl text-muted/90 leading-relaxed max-w-2xl mx-auto"
           >
             Atraia os clientes certos, engaje seu público e feche mais negócios com uma presença digital de altíssimo impacto, focada em resultados reais.
