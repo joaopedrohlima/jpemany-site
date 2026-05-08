@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, type Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { LayoutTemplate, MonitorSmartphone, Palette, ArrowRight } from 'lucide-react';
 
 const items = [
@@ -21,24 +21,27 @@ const items = [
   }
 ];
 
-const containerVariants: Variants = {
+const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.15
-    }
-  }
-};
+      staggerChildren: 0.15,
+    },
+  },
+} as const;
 
-const itemVariants: Variants = {
+const itemVariants = {
   hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: "easeOut" }
-  }
-};
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+} as const;
 
 export default function SalesGrowth() {
   return (
