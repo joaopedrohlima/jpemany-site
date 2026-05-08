@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, type Transition } from 'framer-motion';
 import { LineChart, Database, Zap, ArrowUpRight } from 'lucide-react';
 
 const items = [
@@ -21,6 +21,13 @@ const items = [
   }
 ];
 
+const sectionTransition: Transition = { duration: 0.6 };
+
+const getItemTransition = (idx: number): Transition => ({
+  duration: 0.5,
+  delay: idx * 0.1
+});
+
 export default function Efficiency() {
   return (
     <section id="eficiencia" className="py-24 relative bg-background border-t border-surface-border/30">
@@ -32,7 +39,7 @@ export default function Efficiency() {
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              transition={sectionTransition}
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
                 Aumentar <span className="text-gray-400">Eficiência</span>
@@ -56,7 +63,7 @@ export default function Efficiency() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                  transition={getItemTransition(idx)}
                   className={`p-8 rounded-2xl border border-surface-border bg-surface/10 hover:bg-surface/30 transition-colors ${
                     idx === 2 ? 'sm:col-span-2 sm:w-1/2 sm:mx-auto' : ''
                   }`}

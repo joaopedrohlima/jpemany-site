@@ -1,7 +1,13 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, type Transition } from 'framer-motion';
+
+const glowTransition: Transition = {
+  type: "tween",
+  ease: "easeOut",
+  duration: 1
+};
 
 export default function HeroBackground() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -41,11 +47,7 @@ export default function HeroBackground() {
           x: mousePosition.x - 400,
           y: mousePosition.y - 400,
         }}
-        transition={{
-          type: "tween",
-          ease: "easeOut" as const,
-          duration: 1
-        }}
+        transition={glowTransition}
       />
       
       {/* Constant ambient glows */}

@@ -1,6 +1,9 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, type Transition } from 'framer-motion';
+
+const textTransition: Transition = { duration: 0.5 };
+const formTransition: Transition = { duration: 0.5, delay: 0.2 };
 
 export default function Contact() {
   return (
@@ -15,7 +18,7 @@ export default function Contact() {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
+              transition={textTransition}
             >
               <h2 className="text-3xl md:text-5xl font-bold mb-6">Vamos decolar seu negócio?</h2>
               <p className="text-muted text-lg mb-8">
@@ -33,7 +36,7 @@ export default function Contact() {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={formTransition}
               className="space-y-6"
             >
               <div>

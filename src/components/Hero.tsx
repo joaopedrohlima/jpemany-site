@@ -1,9 +1,15 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, type Transition } from 'framer-motion';
 import { ArrowRight, BarChart3, Globe } from 'lucide-react';
 import Link from 'next/link';
 import HeroBackground from './HeroBackground';
+
+const badgeTransition: Transition = { duration: 0.5 };
+const titleTransition: Transition = { duration: 0.5, delay: 0.1 };
+const textTransition: Transition = { duration: 0.5, delay: 0.2 };
+const buttonsTransition: Transition = { duration: 0.5, delay: 0.3 };
+const cardsTransition: Transition = { duration: 0.8, delay: 0.6 };
 
 export default function Hero() {
   return (
@@ -15,7 +21,7 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={badgeTransition}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-surface-border bg-surface/50 backdrop-blur-sm mb-8"
           >
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
@@ -25,7 +31,7 @@ export default function Hero() {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+            transition={titleTransition}
             className="text-5xl md:text-7xl font-bold tracking-tight mb-8"
           >
             Impulsione sua empresa com a <span className="text-gradient-primary">JPeMANY</span>
@@ -34,7 +40,7 @@ export default function Hero() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={textTransition}
             className="text-xl md:text-2xl text-muted mb-12 max-w-2xl mx-auto leading-relaxed"
           >
             Aumente suas vendas com uma presença digital impecável e eleve sua eficiência com dashboards inteligentes.
@@ -43,7 +49,7 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            transition={buttonsTransition}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <Link
@@ -66,7 +72,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={cardsTransition}
           className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto"
         >
           <div className="glass p-6 rounded-2xl flex items-start gap-4">
