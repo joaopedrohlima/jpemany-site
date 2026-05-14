@@ -2,7 +2,6 @@
 
 import { motion, type Transition } from 'framer-motion';
 import { ArrowRight, BarChart3, Globe } from 'lucide-react';
-import Link from 'next/link';
 import HeroBackground from './HeroBackground';
 
 const badgeTransition: Transition = { duration: 0.5 };
@@ -25,7 +24,7 @@ export default function Hero() {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-surface-border bg-surface/50 backdrop-blur-sm mb-8"
           >
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-sm font-medium text-muted">Soluções Digitais Premium</span>
+            <span className="text-sm font-medium text-muted">Soluções Digitais</span>
           </motion.div>
 
           <motion.h1
@@ -43,7 +42,7 @@ export default function Hero() {
             transition={textTransition}
             className="text-xl md:text-2xl text-muted mb-12 max-w-2xl mx-auto leading-relaxed"
           >
-            Aumente suas vendas com uma presença digital impecável e eleve sua eficiência com dashboards inteligentes.
+            Aumente suas vendas com uma presença digital sólida e eleve sua eficiência com dashboards inteligentes.
           </motion.p>
 
           <motion.div
@@ -52,19 +51,19 @@ export default function Hero() {
             transition={buttonsTransition}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <Link
-              href="#servicos"
+            <a
+              href="#vendas"
               className="w-full sm:w-auto px-8 py-4 bg-primary text-white rounded-full font-medium flex items-center justify-center gap-2 hover:bg-primary-hover transition-all glow-primary-hover"
             >
               Conheça nossas soluções
               <ArrowRight className="w-5 h-5" />
-            </Link>
-            <Link
+            </a>
+            <a
               href="#contato"
               className="w-full sm:w-auto px-8 py-4 bg-surface text-white rounded-full font-medium border border-surface-border hover:bg-surface-border transition-colors"
             >
               Falar com especialista
-            </Link>
+            </a>
           </motion.div>
         </div>
 

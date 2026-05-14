@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import Image from 'next/image';
 
@@ -24,30 +23,30 @@ export default function Footer() {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1 md:col-span-2">
-            <Link href="/" className="flex items-center gap-2 group mb-6 inline-flex">
+            <a href="/" className="flex items-center gap-2 group mb-6 inline-flex">
               <Image src="/logo.webp" alt="Logo" width={40} height={40} />
               <span className="text-xl font-bold tracking-tight text-white">JPeMANY</span>
-            </Link>
+            </a>
             <p className="text-muted max-w-sm mb-6 leading-relaxed">
               Transformando a complexidade digital em soluções elegantes e eficientes para impulsionar os resultados da sua empresa.
             </p>
-            <div className="flex gap-4">
+            {/* <div className="flex gap-4">
               <a href="#" className="w-10 h-10 rounded-full bg-surface border border-surface-border flex items-center justify-center hover:bg-primary hover:border-primary transition-colors text-muted hover:text-white">
                 <InstagramIcon className="w-5 h-5" />
               </a>
               <a href="#" className="w-10 h-10 rounded-full bg-surface border border-surface-border flex items-center justify-center hover:bg-primary hover:border-primary transition-colors text-muted hover:text-white">
                 <LinkedinIcon className="w-5 h-5" />
               </a>
-            </div>
+            </div> */}
           </div>
 
           <div>
             <h4 className="text-white font-semibold mb-6">Links Rápidos</h4>
             <ul className="space-y-4">
-              <li><Link href="#servicos" className="text-muted hover:text-primary transition-colors">Serviços</Link></li>
-              <li><Link href="#sobre" className="text-muted hover:text-primary transition-colors">Sobre Nós</Link></li>
-              <li><Link href="#" className="text-muted hover:text-primary transition-colors">Casos de Sucesso</Link></li>
-              <li><Link href="#contato" className="text-muted hover:text-primary transition-colors">Fale Conosco</Link></li>
+              <li><a href="#" className="text-muted hover:text-primary transition-colors">Sobre nós</a></li>
+              <li><a href="#vendas" className="text-muted hover:text-primary transition-colors">Aumente suas vendas</a></li>
+              <li><a href="#eficiencia" className="text-muted hover:text-primary transition-colors">Eficiência</a></li>
+              <li><a href="#contato" className="text-muted hover:text-primary transition-colors">Fale Conosco</a></li>
             </ul>
           </div>
 
@@ -56,15 +55,15 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-muted">
                 <Mail className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                <span>contato@jpemany.com.br</span>
+                <span>jpemanywebsites@gmail.com</span>
               </li>
               <li className="flex items-start gap-3 text-muted">
                 <Phone className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                <span>+55 (11) 99999-9999</span>
+                <span>+55 (51) 98031-7019</span>
               </li>
               <li className="flex items-start gap-3 text-muted">
                 <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                <span>São Paulo, SP - Brasil</span>
+                <span>Paverama, RS - Brasil</span>
               </li>
             </ul>
           </div>
@@ -74,10 +73,10 @@ export default function Footer() {
           <p className="text-sm text-muted">
             &copy; {new Date().getFullYear()} JPeMANY. Todos os direitos reservados.
           </p>
-          <div className="flex gap-6 text-sm text-muted">
-            <Link href="#" className="hover:text-white transition-colors">Política de Privacidade</Link>
-            <Link href="#" className="hover:text-white transition-colors">Termos de Uso</Link>
-          </div>
+          {/* <div className="flex gap-6 text-sm text-muted">
+            <a href="#" className="hover:text-white transition-colors">Política de Privacidade</a>
+            <a href="#" className="hover:text-white transition-colors">Termos de Uso</a>
+          </div> */}
         </div>
       </div>
     </footer>

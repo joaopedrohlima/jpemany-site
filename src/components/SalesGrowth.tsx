@@ -122,10 +122,10 @@ export default function SalesGrowth() {
                 <h3 className="text-2xl font-bold text-white mb-4">{item.title}</h3>
                 <p className="text-muted leading-relaxed flex-grow text-lg">{item.description}</p>
                 
-                <div className="mt-8 pt-6 border-t border-surface-border/50 flex items-center text-primary font-medium group-hover:gap-2 transition-all cursor-pointer">
+                <a href="#contato" className="mt-8 pt-6 border-t border-surface-border/50 flex items-center text-primary font-medium group-hover:gap-2 transition-all cursor-pointer">
                   <span>Saber mais</span>
                   <ArrowRight className="w-4 h-4 ml-2 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
-                </div>
+                </a>
               </div>
             </motion.div>
           ))}
