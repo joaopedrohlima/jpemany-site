@@ -44,7 +44,7 @@ export default function Contact() {
 
   return (
     <section id="contato" className="py-24 relative overflow-hidden">
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto relative z-10">
         <div className="glass rounded-3xl p-8 md:p-16 max-w-6xl mx-auto border border-surface-border relative overflow-hidden">
           {/* Internal glow */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-[80px] -z-10" />
