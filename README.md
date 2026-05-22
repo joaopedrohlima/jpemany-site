@@ -27,7 +27,7 @@ Criar uma presença digital profissional para a empresa, transmitindo criativida
 
 ## 📸 Preview
 
-.......
+![Homepage](./public/screenshot-homepage.png)
 
 ## 🛠️ Instalação
 
